@@ -1,4 +1,4 @@
-package munich.nerdy.utility;
+package munich.nerdy.drinkers.utility;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -19,6 +19,10 @@ public class Utility {
         else throw new FileNotFoundException("properties file " + propName + " not found in classpath");
 
         return properties;
+    }
+
+    public static String withNewLine(String original) {
+        return original + System.lineSeparator();
     }
 
 }

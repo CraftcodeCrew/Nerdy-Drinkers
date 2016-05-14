@@ -1,4 +1,4 @@
-package munich.nerdy.plots;
+package munich.nerdy.drinkers.plots;
 
 /**
  * Created by cem on 14.05.16.

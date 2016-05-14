@@ -1,4 +1,4 @@
-package munich.nerdy.plots;
+package munich.nerdy.drinkers.plots;
 
 import com.memetix.mst.language.Language;
 import org.jsoup.Jsoup;

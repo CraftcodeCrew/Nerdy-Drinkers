@@ -9,6 +9,7 @@ public class Main {
 
         while(game.getPlayOn()) {
             game.Output.init();
+            System.exit(0);
         }
     }
 }
