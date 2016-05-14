@@ -1,7 +1,4 @@
 package munich.nerdy.drinkers.io;
-
-import munich.nerdy.drinkers.player.Player;
-
 import java.util.*;
 
 /**
