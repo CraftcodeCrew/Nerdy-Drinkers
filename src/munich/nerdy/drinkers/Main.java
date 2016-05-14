@@ -3,6 +3,11 @@ package munich.nerdy.drinkers;
 public class Main {
 
     public static void main(String[] args) {
-	// write your code here
+	    int players= 0; // Insert from IO
+        String names[]= new String[players];
+
+        Game game= new Game(players, names);
+
+
     }
 }
