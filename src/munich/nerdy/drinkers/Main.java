@@ -3,8 +3,8 @@ package munich.nerdy.drinkers;
 public class Main {
 
     public static void main(String[] args) {
-	    int players= 0; //GameInput.insertNumberOfPlayers();
-        String names[]= {}; //= GameInput.insertPlayerNames();
+	    int players= 3; //GameInput.insertNumberOfPlayers();
+        String names[]= {"h","a","f"}; //= GameInput.insertPlayerNames();
 
         Game game= new Game(players, names);
 

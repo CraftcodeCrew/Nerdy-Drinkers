@@ -15,10 +15,10 @@ public class Player {
     public Player() {
     }
 
-    public Player(int id, String name, int failed) {
+    public Player(int id, String name) {
         this.id = id;
         this.name = name;
-        this.failed = failed;
+        this.failed = 0;
     }
 
     public void incrementFailed() {

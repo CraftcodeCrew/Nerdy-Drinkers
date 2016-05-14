@@ -1,40 +1,36 @@
 package munich.nerdy.drinkers;
 
+import munich.nerdy.drinkers.player.Player;
+
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Created by Domi on 14.05.2016.
  */
 public class Game {
 
-    int players;
-    String names[];
-    int failed[];
 
+    List<Player> players = new ArrayList<>();
     boolean playOn= true;
     int roundCount= 0;
 
     public Game(int players, String names[]) {
-        this.players= players;
-        this.names= names;
-        this.failed= new int[players];
+        for (int i=0; i < players; i++) {
+            this.players.add(new Player(i, names[i]));
+        }
     }
 
     public void addRound() {
         this.roundCount++;
     }
 
+    public int getRandomPlayer() {
+        return (int)(Math.random() * ((this.players.size() - 1) + 1));
+    }
+
 
     // Setter and Getter
-    public int getPlayers() {
-        return players;
-    }
-
-    public String[] getNames() {
-        return names;
-    }
-
-    public int[] getFailed() {
-        return failed;
-    }
 
     public boolean getPlayOn() {
         return playOn;
@@ -42,10 +38,6 @@ public class Game {
 
     public int getRoundCount() {
         return roundCount;
-    }
-
-    public void setFailed(int[] failed) {
-        this.failed = failed;
     }
 
     public void setPlayOn(boolean playOn) {
