@@ -20,12 +20,12 @@ public class GameOutput {
     List<Player> players = new ArrayList<>();
 
     public GameOutput(List<Player> players) {
-        this.players= players;
+        this.players = players;
     }
 
     public void init() {
         System.out.printf(withNewLine("Es treten %d Superhelden gegeneinander an."), this.players.size());
-        for(Player player : players) {
+        for (Player player : players) {
             System.out.printf(withNewLine("Superheld %s opfert sich für die Menschehit!"), player.getName());
         }
     }
@@ -36,11 +36,11 @@ public class GameOutput {
 
     public void story() {
         try {
-           Properties prop = readConfig();
+            Properties prop = readConfig();
 
-            TranslateSetting setting =new TranslateSetting(prop.getProperty("secretKey"), prop.getProperty("clientID"));
+            TranslateSetting setting = new TranslateSetting(prop.getProperty("secretKey"), prop.getProperty("clientID"));
             TextFetcher fetcher = new TextFetcher(setting);
-            String plot =  fetcher.getGermanPlot();
+            String plot = fetcher.getGermanPlot();
             System.out.printf(withNewLine(plot));
 
         } catch (IOException e) {
@@ -49,4 +49,13 @@ public class GameOutput {
             e.printStackTrace();
         }
     }
+
+    public void roundWon(String name) {
+        System.out.printf(withNewLine("%s ist ein Badass!"), name);
+    }
+
+    public void roundLoss(String name) {
+        System.out.printf(withNewLine("Hey %s, niemand mag dich!"), name);
+    }
 }
+
