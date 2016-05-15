@@ -38,7 +38,7 @@ public class GameOutput {
         try {
            Properties prop = readConfig();
 
-            TranslateSetting setting =new TranslateSetting(prop.getProperty("secretKey"), prop.getProperty("clientID"));
+            TranslateSetting setting = new TranslateSetting(prop.getProperty("apikey"));
             TextFetcher fetcher = new TextFetcher(setting);
             String plot =  fetcher.getGermanPlot();
             System.out.printf(withNewLine(plot));

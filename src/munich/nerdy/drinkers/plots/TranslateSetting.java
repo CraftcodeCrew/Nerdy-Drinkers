@@ -5,19 +5,15 @@ package munich.nerdy.drinkers.plots;
  */
 public class TranslateSetting {
 
-    private final String secretKey;
-    private final String clientID;
+    private final String apiKey;
 
-    public TranslateSetting(String secretKey, String clientID) {
-        this.secretKey = secretKey;
-        this.clientID = clientID;
+    public TranslateSetting(String secretKey) {
+        this.apiKey = secretKey;
     }
 
-    public String getSecretKey() {
-        return secretKey;
+    public String getApiKey() {
+        return apiKey;
     }
 
-    public String getClientID() {
-        return clientID;
-    }
+
 }
