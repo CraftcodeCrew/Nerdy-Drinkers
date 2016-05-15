@@ -6,17 +6,9 @@ import java.io.*;
  * Created by leong on 14.05.2016.
  */
 public class Blacklist {
-    private final String BLACKLIST_FILE = "blacklist/blacklist.txt";
-    private String blacklistWord;
+    private static final String BLACKLIST_FILE = "blacklist/blacklist.txt";
 
-    public Blacklist() {
-    }
-
-    public Blacklist(String blacklistWord) {
-        this.blacklistWord = blacklistWord;
-    }
-
-    public boolean addWordToBlacklist(String blacklistWord) {
+    public static boolean addWordToBlacklist(String blacklistWord) {
         File blacklist = new File("blacklist");
         blacklist.mkdir();
         try(PrintWriter blacklistFileWriter = new PrintWriter(new FileWriter(BLACKLIST_FILE,true))) {
@@ -30,7 +22,7 @@ public class Blacklist {
         return true;
     }
 
-    public String getBlacklist() {
+    public static String getBlacklist() {
         try(BufferedReader br = new BufferedReader(new FileReader(BLACKLIST_FILE))) {
             StringBuilder blacklist = new StringBuilder();
             while (br.ready()) {
@@ -41,23 +33,18 @@ public class Blacklist {
             return blacklist.toString();
         }
         catch (IOException ioe) {
-            return "could not read File!";
+            return "Die Blacklist ist leer.";
         }
-
     }
 
-    public String getBlacklistWord() {
-        return blacklistWord;
-    }
-
-    public void setBlacklistWord(String blacklistWord) {
-        this.blacklistWord = blacklistWord;
-    }
-
-
-    public static void main(String[] args) {
-        Blacklist blacklist = new Blacklist();
-        System.out.println(blacklist.addWordToBlacklist("aqfqa"));
-        System.out.println(blacklist.getBlacklist());
+    public static boolean clearBlacklist(){
+        try {
+            File blacklist = new File(BLACKLIST_FILE);
+            blacklist.delete();
+        }
+        catch (Exception e) {
+            return false;
+        }
+        return true;
     }
 }

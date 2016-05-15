@@ -13,20 +13,24 @@ import java.util.List;
 public class Game {
 
     List<Player> players = new ArrayList<>();
-    boolean playOn= true;
+    boolean continueGame = true;
+    boolean isSuperRound = false;
     int roundCount= 0;
     GameOutput Output;
     GameInput Input;
 
-    public Game(int players, String names[]) {
-        for (int i=0; i < players; i++) {
-            this.players.add(new Player(i, names[i]));
-        }
+    public Game(List<Player> players) {
+        this.players = players;
         Output= new GameOutput(this.players);
         Input= new GameInput();
     }
 
     public void addRound() {
+        isSuperRound = false;
+        Double random = Math.random();
+        if(random > 0.75) {
+            isSuperRound = !isSuperRound;
+        }
         this.roundCount++;
     }
 
@@ -37,15 +41,15 @@ public class Game {
 
     // Setter and Getter
 
-    public boolean getPlayOn() {
-        return playOn;
+    public boolean getContinueGame() {
+        return continueGame;
     }
 
     public int getRoundCount() {
         return roundCount;
     }
 
-    public void setPlayOn(boolean playOn) {
-        this.playOn = playOn;
+    public void setContinueGame(boolean continueGame) {
+        this.continueGame = continueGame;
     }
 }

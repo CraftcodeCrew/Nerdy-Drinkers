@@ -3,6 +3,7 @@ package munich.nerdy.drinkers.io;
 import munich.nerdy.drinkers.player.Player;
 import munich.nerdy.drinkers.plots.TextFetcher;
 import munich.nerdy.drinkers.plots.TranslateSetting;
+import munich.nerdy.drinkers.utility.ASCIIUtils;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -20,12 +21,16 @@ public class GameOutput {
     List<Player> players = new ArrayList<>();
 
     public GameOutput(List<Player> players) {
-        this.players= players;
+        this.players = players;
     }
 
-    public void init() {
+    public static void init() {
+        System.out.printf(withNewLine(ASCIIUtils.ASCII_BEER));
+    }
+
+    public void start() {
         System.out.printf(withNewLine("Es treten %d Superhelden gegeneinander an."), this.players.size());
-        for(Player player : players) {
+        for (Player player : players) {
             System.out.printf(withNewLine("Superheld %s opfert sich für die Menschehit!"), player.getName());
         }
     }
@@ -36,17 +41,36 @@ public class GameOutput {
 
     public void story() {
         try {
-           Properties prop = readConfig();
+            Properties prop = readConfig();
 
             TranslateSetting setting = new TranslateSetting(prop.getProperty("apikey"));
             TextFetcher fetcher = new TextFetcher(setting);
-            String plot =  fetcher.getGermanPlot();
+            String plot = fetcher.getGermanPlot();
             System.out.printf(withNewLine(plot));
 
-        } catch (IOException e) {
-            e.printStackTrace();
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
+
+    public void superRound() {
+        System.out.println(ASCIIUtils.ASCII_SUPER_GNU);
+        System.out.println("Superrunde! Du musst jetz eine Anekdote aus deinem Leben vortragen!");
+    }
+
+    public void roundWon(String name) {
+        System.out.printf(withNewLine("%s ist ein Badass!"), name);
+        System.out.printf(withNewLine(ASCIIUtils.ASCII_SUPERMAN));
+    }
+
+    public void roundLoss(String name) {
+        System.out.printf(withNewLine("Hey %s, niemand mag dich!"), name);
+        System.out.printf(withNewLine(ASCIIUtils.ASCII_LEMONS));
+
+    }
+
+    public void blacklist() {
+        System.out.printf(withNewLine("Aktuelle Blacklist: %s"), Blacklist.getBlacklist());
+    }
 }
+
