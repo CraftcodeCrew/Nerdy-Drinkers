@@ -31,7 +31,7 @@ public class Summary {
                 winnerCount = player.getFailed();
                 winner = player;
             }
-            if(player.getFailed() > loserCount) {
+            if(player.getFailed() >= loserCount) {
                 loserCount = player.getFailed();
                 loser = player;
             }
