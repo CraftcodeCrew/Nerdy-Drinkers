@@ -23,8 +23,9 @@ public class Main {
                 game.Output.roundLoss(playerOfTheRound);
             }
 
+            game.addRound();
             if (game.getRoundCount() % players == 0) {
-                if (GameInput.continueGame()) game.setContinueGame(false);
+                if (!GameInput.continueGame()) game.setContinueGame(false);
             }
         }
     }
