@@ -71,8 +71,6 @@ public class GameOutput {
     }
 
     public void roundLoss(String name) {
-        Player currentPlayer = getPlayer(name);
-        currentPlayer.incrementFailed();
         System.out.printf(withNewLine("Hey %s, niemand mag dich!"), name);
         System.out.printf(withNewLine(ASCIIUtils.ASCII_LEMONS));
         System.out.println();
@@ -86,13 +84,6 @@ public class GameOutput {
     public void summary(int roundCount) {
         Summary summary = new Summary(players, roundCount);
         System.out.println(summary.toString());
-    }
-
-    private Player getPlayer(String name) {
-        for(Player currentPlayer : players) {
-            if(currentPlayer.getName().equals(name)) return currentPlayer;
-        }
-        return null;
     }
 }
 

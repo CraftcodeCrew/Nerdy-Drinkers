@@ -34,6 +34,12 @@ public class Game {
         this.roundCount++;
     }
 
+    public void incrementFailed(String name) {
+        for(Player currentPlayer : players) {
+            if(currentPlayer.getName().equals(name)) currentPlayer.incrementFailed();
+        }
+    }
+
     public Player getRandomPlayer() {
         return players.get((int)(Math.random() * ((this.players.size() - 1) + 1)));
     }

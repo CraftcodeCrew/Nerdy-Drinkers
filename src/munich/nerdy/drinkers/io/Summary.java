@@ -55,8 +55,8 @@ public class Summary {
                 "Spieler =" + getPlayerNames(players) + "\n" +
                 "Gewinner='" + winnerInfo + '\'' + "\n" +
                 "Verlierer='" + loserInfo + '\'' + "\n" +
-                "gespielte Runden=" + roundCount + "\n" +
-                "Blacklist =" + Blacklist.getBlacklist();
+                "gespielte Runden= " + roundCount + "\n" +
+                "Blacklist = " + Blacklist.getBlacklist();
     }
 
     public List<Player> getPlayers() {

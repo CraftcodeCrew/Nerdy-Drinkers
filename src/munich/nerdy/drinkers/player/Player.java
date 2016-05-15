@@ -22,7 +22,8 @@ public class Player {
     }
 
     public void incrementFailed() {
-        setFailed(failed++);
+        setFailed(failed = failed +1
+        );
     }
 
     public int getId() {

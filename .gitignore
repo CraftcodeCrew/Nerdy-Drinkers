@@ -26,3 +26,4 @@ config.properties
 blacklist/
 .idea/artifacts/
 src/META-INF/
+log/
