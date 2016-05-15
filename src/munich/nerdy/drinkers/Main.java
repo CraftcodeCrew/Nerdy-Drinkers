@@ -17,7 +17,10 @@ public class Main {
             game.Output.blacklist();
             String playerOfTheRound= game.getRandomPlayer().getName();
             game.Output.chosen(playerOfTheRound);
-            game.Output.story();
+            if (!game.isSuperRound) {
+                game.Output.story();
+            }
+            else game.Output.superRound();
 
             if (GameInput.playerWon(playerOfTheRound)) {
                 game.Output.roundWon(playerOfTheRound);

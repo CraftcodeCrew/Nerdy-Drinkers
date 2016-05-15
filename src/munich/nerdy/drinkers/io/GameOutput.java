@@ -52,6 +52,11 @@ public class GameOutput {
         }
     }
 
+    public void superRound(){
+        System.out.println(ASCIIUtils.ASCII_SUPER_GNU);
+        System.out.println("Superrunde! Du musst jetz eine Anekdote aus deinem Leben vortragen!");
+    }
+
     public void roundWon(String name) {
         System.out.printf(withNewLine("%s ist ein Badass!"), name);
         System.out.printf(withNewLine(ASCIIUtils.ASCII_SUPERMAN));

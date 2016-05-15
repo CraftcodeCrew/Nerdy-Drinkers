@@ -14,6 +14,7 @@ public class Game {
 
     List<Player> players = new ArrayList<>();
     boolean continueGame = true;
+    boolean isSuperRound = false;
     int roundCount= 0;
     GameOutput Output;
     GameInput Input;
@@ -25,6 +26,11 @@ public class Game {
     }
 
     public void addRound() {
+        isSuperRound = false;
+        Double random = Math.random();
+        if(random > 0.75) {
+            isSuperRound = !isSuperRound;
+        }
         this.roundCount++;
     }
 
