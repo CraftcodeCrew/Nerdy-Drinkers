@@ -15,10 +15,7 @@ public class GameLog {
 
     private static final String LOGFILE = "log/gameLog.txt";
 
-    public GameLog() {
-    }
-
-    private void log(String message){
+    private static void log(String message){
         SimpleDateFormat formatter = new SimpleDateFormat("yyyy.MM.dd 'at' HH:mm:ss ");
         Date currentTime = new Date();
         try(PrintWriter logFileWriter = new PrintWriter(new FileWriter(LOGFILE,true))) {
