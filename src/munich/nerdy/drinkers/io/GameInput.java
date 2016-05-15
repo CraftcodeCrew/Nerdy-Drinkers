@@ -60,4 +60,21 @@ public class GameInput {
         }
         return false;
     }
+
+    public static boolean continueGame(){
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Wollen Sie weiterspielen?(y/n)");
+        String answer = scanner.nextLine();
+        if (answer.equals("y")) {
+            return true;
+        }
+        else if (answer.equals("n")) {
+            return false;
+        }
+        else {
+            System.out.println("Falsche Eingabe, bitte versuche es noch einmal!");
+            continueGame();
+        }
+        return false;
+    }
 }
