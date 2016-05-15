@@ -25,27 +25,29 @@ public class GameOutput {
     }
 
     public static void init() {
-        System.out.printf(withNewLine(ASCIIUtils.ASCII_BEER));
+        System.out.printf(withNewLine(ASCIIUtils.ANSI_YELLOW + ASCIIUtils.ASCII_BEER + ASCIIUtils.ANSI_RESET));
+        System.out.println();
     }
 
     public void start() {
         System.out.printf(withNewLine("Es treten %d Superhelden gegeneinander an."), this.players.size());
         for (Player player : players) {
-            System.out.printf(withNewLine("Superheld %s opfert sich für die Menschehit!"), player.getName());
+            System.out.printf(withNewLine(
+                    ASCIIUtils.ANSI_BLUE + "Superheld %s opfert sich für die Menschehit!" + ASCIIUtils.ANSI_RESET), player.getName()
+            );
         }
-        System.out.println();
-        System.out.println();
     }
 
     public void chosen(String name) {
-        System.out.printf(withNewLine("%s, du bist der Auserwählte! Teile deine Geschichte mit der Menscheit:"), name);
+        System.out.printf(withNewLine(
+                ASCIIUtils.ANSI_BLUE + "%s, du bist der Auserwählte! Teile deine Geschichte mit der Menscheit:" + ASCIIUtils.ANSI_RESET
+        ), name);
         System.out.println();
     }
 
     public void story() {
         try {
             Properties prop = readConfig();
-
             TranslateSetting setting = new TranslateSetting(prop.getProperty("apikey"));
             TextFetcher fetcher = new TextFetcher(setting);
             String plot = fetcher.getGermanPlot();
@@ -57,8 +59,8 @@ public class GameOutput {
     }
 
     public void superRound(String name) {
-        System.out.println(ASCIIUtils.ASCII_SUPER_GNU);
-        System.out.printf("Superrunde! %s musst jetz eine Anekdote aus deinem Leben vortragen!", name);
+        System.out.println(ASCIIUtils.ANSI_YELLOW + ASCIIUtils.ASCII_SUPER_GNU);
+        System.out.printf("Superrunde! %s musst jetz eine Anekdote aus deinem Leben vortragen!" + ASCIIUtils.ANSI_RESET, name);
         System.out.println();
     }
 
@@ -75,7 +77,7 @@ public class GameOutput {
     }
 
     public void blacklist() {
-        System.out.printf(withNewLine("Aktuelle Blacklist: %s"), Blacklist.getBlacklist());
+        System.out.printf(withNewLine(ASCIIUtils.ANSI_RED + "Aktuelle Blacklist: %s" + ASCIIUtils.ANSI_RESET), Blacklist.getBlacklist());
         System.out.println();
     }
 }

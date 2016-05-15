@@ -1,5 +1,6 @@
 package munich.nerdy.drinkers.io;
 import munich.nerdy.drinkers.player.Player;
+import munich.nerdy.drinkers.utility.ASCIIUtils;
 
 import java.util.*;
 
@@ -63,7 +64,7 @@ public class GameInput {
 
     public static void addWordToBlacklist(){
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Welches Wort wollen Sie der Blacklist hinzufügen?");
+        System.out.println(ASCIIUtils.ANSI_BLUE + "Welches Wort wollen Sie der Blacklist hinzufügen?" + ASCIIUtils.ANSI_RESET);
         if(Blacklist.addWordToBlacklist(scanner.nextLine())) System.out.println("Wort erfolgreich der Blacklist hinzugefügt!");
         else{
             System.out.println("Etwas ist schiefgegangen, bitte versuche es noch einmal!");
@@ -73,7 +74,7 @@ public class GameInput {
 
     public static boolean continueGame(){
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Wollen Sie weiterspielen?(y/n)");
+        System.out.println(ASCIIUtils.ANSI_BLUE + "Wollen Sie weiterspielen?(y/n)" + ASCIIUtils.ANSI_RESET);
         String answer = scanner.nextLine();
         if (answer.equals("y")) {
             return true;
