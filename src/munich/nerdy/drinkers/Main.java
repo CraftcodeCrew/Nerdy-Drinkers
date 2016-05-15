@@ -6,24 +6,22 @@ public class Main {
 
     public static void main(String[] args) {
 	    int players= GameInput.insertNumberOfPlayers();
-        String names[]= {"h","a","f"}; //= GameInput.insertPlayerNames();
 
-        Game game= new Game(players, names);
+        Game game= new Game(GameInput.createPlayers(players));
 
-        while(game.getPlayOn()) {
+        while(game.getContinueGame()) {
             game.Output.init();
             String playerOfTheRound= game.getRandomPlayer().getName();
             game.Output.chosen(playerOfTheRound);
             game.Output.story();
 
-            boolean playerWon= true;
-
-            if (playerWon) {
+            if (GameInput.playerWon(playerOfTheRound)) {
                 game.Output.roundWon(playerOfTheRound);
             } else {
                 game.Output.roundLoss(playerOfTheRound);
             }
 
+            if (game.getRoundCount() % players == 0) game.setContinueGame(true);
             System.exit(0);
         }
     }
