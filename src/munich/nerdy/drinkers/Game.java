@@ -30,8 +30,8 @@ public class Game {
         this.roundCount++;
     }
 
-    public int getRandomPlayer() {
-        return (int)(Math.random() * ((this.players.size() - 1) + 1));
+    public Player getRandomPlayer() {
+        return players.get((int)(Math.random() * ((this.players.size() - 1) + 1)));
     }
 
 

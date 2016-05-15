@@ -21,3 +21,5 @@ out/
 # Mongo Explorer plugin:
 .idea/mongoSettings.xml
 
+#Other
+config.properties

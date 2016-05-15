@@ -16,13 +16,16 @@ public class TextFetcher {
         com.memetix.mst.translate.Translate.setClientSecret(setting.getSecretKey());
     }
 
-    public static String getShortPlot() throws IOException {
+    public  String getShortPlot() throws IOException {
         Document document = Jsoup.connect(PLOTSHORT_URL).get();
         return document.body().getElementById("content").child(1).child(0).text();
     }
 
-    public static String translate(String original) throws Exception {
+    public  String translate(String original) throws Exception {
         return com.memetix.mst.translate.Translate.execute(original, Language.ENGLISH, Language.GERMAN);
     }
 
+    public String getGermanPlot() throws Exception {
+        return translate(getShortPlot());
+    }
 }

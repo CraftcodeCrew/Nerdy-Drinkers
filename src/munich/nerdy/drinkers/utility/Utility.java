@@ -10,7 +10,7 @@ public class Utility {
 
     public static Properties readConfig() throws IOException {
         Properties properties = new Properties();
-        String propName = "config.properties";
+        String propName = "resources/config.properties";
 
         InputStream inputStream = Utility.class.getClassLoader().getResourceAsStream(propName);
 
