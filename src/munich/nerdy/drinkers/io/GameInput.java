@@ -6,12 +6,8 @@ import java.util.*;
  */
 public class GameInput {
 
-    private int numberOfPlayers;
-
-    public GameInput() {
-    }
-
-    public void insertNumberOfPlayers() {
+    public static int insertNumberOfPlayers() {
+        int numberOfPlayers = 0;
         System.out.println("Bitte geben Sie die Anzahl der Spieler an:");
         System.out.println();
 
@@ -24,9 +20,10 @@ public class GameInput {
             insertNumberOfPlayers();
         }
         System.out.println("Spieler: " + numberOfPlayers);
+        return numberOfPlayers;
     }
 
-    public Map<Integer,String> createPlayerNames() {
+    public static Map<Integer,String> createPlayerNames(int numberOfPlayers) {
         Map<Integer,String> players = new HashMap<>();
         try{
             Scanner nameScanner = new Scanner(System.in);
@@ -41,7 +38,7 @@ public class GameInput {
         }
         catch (Exception e) {
             System.out.println("Etwas ist schiefgelaufen, bitte erneut versuchen!");
-            createPlayerNames();
+            createPlayerNames(numberOfPlayers);
         }
         return players;
     }
