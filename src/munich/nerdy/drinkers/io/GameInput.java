@@ -30,7 +30,7 @@ public class GameInput {
         try{
             Scanner nameScanner = new Scanner(System.in);
             for (int i = 1; i <= numberOfPlayers; i++) {
-                System.out.println("Spieler" + i + ":");
+                System.out.println("Spieler " + i + ":");
                 System.out.println("Bitte geben Sie ihren Spielernamen ein:");
                 System.out.println();
                 String name = nameScanner.nextLine();
@@ -46,10 +46,9 @@ public class GameInput {
 
     public static boolean playerWon(String name) {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Hat" + name + "die Runde geschafft?(y/n)");
+        System.out.println("Hat '" + name + "' die Runde geschafft?(y/n)");
         String answer = scanner.nextLine();
         if (answer.equals("y")) {
-
             return true;
         }
         else if (answer.equals("n")) {
