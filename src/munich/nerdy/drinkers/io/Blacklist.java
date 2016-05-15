@@ -36,4 +36,15 @@ public class Blacklist {
             return "Die Blacklist ist leer.";
         }
     }
+
+    public static boolean clearBlacklist(){
+        try {
+            File blacklist = new File(BLACKLIST_FILE);
+            blacklist.delete();
+        }
+        catch (Exception e) {
+            return false;
+        }
+        return true;
+    }
 }
