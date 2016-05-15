@@ -49,6 +49,7 @@ public class GameInput {
         System.out.println("Hat" + name + "die Runde geschafft?(y/n)");
         String answer = scanner.nextLine();
         if (answer.equals("y")) {
+
             return true;
         }
         else if (answer.equals("n")) {
@@ -59,6 +60,16 @@ public class GameInput {
             playerWon(name);
         }
         return false;
+    }
+
+    public static void addWordToBlacklist(){
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Welches Wort wollen Sie der Blacklist hinzufügen?");
+        if(Blacklist.addWordToBlacklist(scanner.nextLine())) System.out.println("Wort erfolgreich der Blacklist hinzugefügt!");
+        else{
+            System.out.println("Etwas ist schiefgegangen, bitte versuche es noch einmal!");
+            addWordToBlacklist();
+        }
     }
 
     public static boolean continueGame(){
