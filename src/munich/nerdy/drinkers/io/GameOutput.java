@@ -88,7 +88,7 @@ public class GameOutput {
         System.out.println(summary.toString());
     }
 
-    public Player getPlayer(String name) {
+    private Player getPlayer(String name) {
         for(Player currentPlayer : players) {
             if(currentPlayer.getName().equals(name)) return currentPlayer;
         }
