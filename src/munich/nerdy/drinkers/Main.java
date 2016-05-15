@@ -33,9 +33,10 @@ public class Main {
             if (game.getRoundCount() % players == 0) {
                 if (!GameInput.continueGame()) {
                     game.setContinueGame(false);
-                    Blacklist.clearBlacklist();
                 }
             }
         }
+        game.Output.summary(game.getRoundCount());
+        Blacklist.clearBlacklist();
     }
 }
