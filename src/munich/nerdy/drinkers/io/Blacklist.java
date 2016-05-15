@@ -33,7 +33,7 @@ public class Blacklist {
             return blacklist.toString();
         }
         catch (IOException ioe) {
-            return "could not read File!";
+            return "Die Blacklist ist leer.";
         }
     }
 }

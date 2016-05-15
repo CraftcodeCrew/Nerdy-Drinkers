@@ -9,20 +9,23 @@ public class Main {
 
         Game game= new Game(GameInput.createPlayers(players));
 
+        game.Output.init();
         while(game.getContinueGame()) {
-            game.Output.init();
+            game.Output.blacklist();
             String playerOfTheRound= game.getRandomPlayer().getName();
             game.Output.chosen(playerOfTheRound);
             game.Output.story();
 
             if (GameInput.playerWon(playerOfTheRound)) {
                 game.Output.roundWon(playerOfTheRound);
+                GameInput.addWordToBlacklist();
             } else {
                 game.Output.roundLoss(playerOfTheRound);
             }
 
-            if (game.getRoundCount() % players == 0) game.setContinueGame(true);
-            System.exit(0);
+            if (game.getRoundCount() % players == 0) {
+                if (GameInput.continueGame()) game.setContinueGame(false);
+            }
         }
     }
 }

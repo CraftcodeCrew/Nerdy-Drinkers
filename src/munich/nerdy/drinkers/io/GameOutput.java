@@ -43,8 +43,6 @@ public class GameOutput {
             String plot = fetcher.getGermanPlot();
             System.out.printf(withNewLine(plot));
 
-        } catch (IOException e) {
-            e.printStackTrace();
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -56,6 +54,10 @@ public class GameOutput {
 
     public void roundLoss(String name) {
         System.out.printf(withNewLine("Hey %s, niemand mag dich!"), name);
+    }
+
+    public void blacklist() {
+        System.out.printf(withNewLine("Aktuelle Blacklist: %s"), Blacklist.getBlacklist());
     }
 }
 

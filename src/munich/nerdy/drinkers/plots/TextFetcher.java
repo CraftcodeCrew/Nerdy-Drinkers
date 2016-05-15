@@ -22,7 +22,8 @@ public class TextFetcher {
     }
 
     public  String translate(String original) throws Exception {
-        return com.memetix.mst.translate.Translate.execute(original, Language.ENGLISH, Language.GERMAN);
+        return original;
+        //return com.memetix.mst.translate.Translate.execute(original, Language.ENGLISH, Language.GERMAN);
     }
 
     public String getGermanPlot() throws Exception {

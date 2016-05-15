@@ -19,6 +19,7 @@ public class Game {
     GameInput Input;
 
     public Game(List<Player> players) {
+        this.players = players;
         Output= new GameOutput(this.players);
         Input= new GameInput();
     }
