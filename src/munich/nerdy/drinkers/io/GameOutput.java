@@ -3,6 +3,7 @@ package munich.nerdy.drinkers.io;
 import munich.nerdy.drinkers.player.Player;
 import munich.nerdy.drinkers.plots.TextFetcher;
 import munich.nerdy.drinkers.plots.TranslateSetting;
+import munich.nerdy.drinkers.utility.ASCIIUtils;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -23,7 +24,10 @@ public class GameOutput {
         this.players = players;
     }
 
-    public void init() {
+    public static void init() {
+        System.out.printf(withNewLine(ASCIIUtils.ASCII_BEER));
+    }
+    public void start() {
         System.out.printf(withNewLine("Es treten %d Superhelden gegeneinander an."), this.players.size());
         for (Player player : players) {
             System.out.printf(withNewLine("Superheld %s opfert sich für die Menschehit!"), player.getName());
@@ -50,10 +54,13 @@ public class GameOutput {
 
     public void roundWon(String name) {
         System.out.printf(withNewLine("%s ist ein Badass!"), name);
+        System.out.printf(withNewLine(ASCIIUtils.ASCII_SUPERMAN));
     }
 
     public void roundLoss(String name) {
         System.out.printf(withNewLine("Hey %s, niemand mag dich!"), name);
+        System.out.printf(withNewLine(ASCIIUtils.ASCII_LEMONS));
+
     }
 
     public void blacklist() {

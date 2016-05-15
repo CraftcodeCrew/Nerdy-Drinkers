@@ -2,15 +2,17 @@ package munich.nerdy.drinkers;
 
 import munich.nerdy.drinkers.io.Blacklist;
 import munich.nerdy.drinkers.io.GameInput;
+import munich.nerdy.drinkers.io.GameOutput;
 
 public class Main {
 
     public static void main(String[] args) {
-	    int players= GameInput.insertNumberOfPlayers();
+        GameOutput.init();
 
+	    int players= GameInput.insertNumberOfPlayers();
         Game game= new Game(GameInput.createPlayers(players));
 
-        game.Output.init();
+        game.Output.start();
         while(game.getContinueGame()) {
             game.Output.blacklist();
             String playerOfTheRound= game.getRandomPlayer().getName();

@@ -69,7 +69,7 @@ public class ASCIIUtils {
             "              |_  | |\\ | |_  (_   |      |__) |_  |_  |__)\n" +
             "              |   | | \\| |__ __)  |      |__) |__ |__ | \\";
 
-    private static final String ASCII_LEMONS = "\n" +
+    public static final String ASCII_LEMONS = "\n" +
             "                       (())))                                        \n" +
             "          ______      (()o))()        IF LIFE HANDS YOU LEMONS,      \n" +
             "       .-'.-'  |`-.  (()) o(()          HOLLOW THEM OUT AND FUCK THEM\n" +
