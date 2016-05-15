@@ -19,7 +19,7 @@ public class GameInput {
         }
         catch (InputMismatchException e) {
             System.out.println("Falsche Eingabe, bitte geben Sie nur natürliche Zahlen ein!");
-            insertNumberOfPlayers();
+            return insertNumberOfPlayers();
         }
         System.out.println("Spieler: " + numberOfPlayers);
         return numberOfPlayers;

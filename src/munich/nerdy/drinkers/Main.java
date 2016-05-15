@@ -1,5 +1,6 @@
 package munich.nerdy.drinkers;
 
+import munich.nerdy.drinkers.io.Blacklist;
 import munich.nerdy.drinkers.io.GameInput;
 
 public class Main {
@@ -25,7 +26,10 @@ public class Main {
 
             game.addRound();
             if (game.getRoundCount() % players == 0) {
-                if (!GameInput.continueGame()) game.setContinueGame(false);
+                if (!GameInput.continueGame()) {
+                    game.setContinueGame(false);
+                    Blacklist.clearBlacklist();
+                }
             }
         }
     }
