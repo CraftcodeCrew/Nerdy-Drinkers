@@ -33,10 +33,13 @@ public class GameOutput {
         for (Player player : players) {
             System.out.printf(withNewLine("Superheld %s opfert sich für die Menschehit!"), player.getName());
         }
+        System.out.println();
+        System.out.println();
     }
 
     public void chosen(String name) {
         System.out.printf(withNewLine("%s, du bist der Auserwählte! Teile deine Geschichte mit der Menscheit:"), name);
+        System.out.println();
     }
 
     public void story() {
@@ -47,30 +50,33 @@ public class GameOutput {
             TextFetcher fetcher = new TextFetcher(setting);
             String plot = fetcher.getGermanPlot();
             System.out.printf(withNewLine(plot));
-
+            System.out.println();
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
-    public void superRound() {
+    public void superRound(String name) {
         System.out.println(ASCIIUtils.ASCII_SUPER_GNU);
-        System.out.println("Superrunde! Du musst jetz eine Anekdote aus deinem Leben vortragen!");
+        System.out.printf("Superrunde! %s musst jetz eine Anekdote aus deinem Leben vortragen!", name);
+        System.out.println();
     }
 
     public void roundWon(String name) {
         System.out.printf(withNewLine("%s ist ein Badass!"), name);
         System.out.printf(withNewLine(ASCIIUtils.ASCII_SUPERMAN));
+        System.out.println();
     }
 
     public void roundLoss(String name) {
         System.out.printf(withNewLine("Hey %s, niemand mag dich!"), name);
         System.out.printf(withNewLine(ASCIIUtils.ASCII_LEMONS));
-
+        System.out.println();
     }
 
     public void blacklist() {
         System.out.printf(withNewLine("Aktuelle Blacklist: %s"), Blacklist.getBlacklist());
+        System.out.println();
     }
 }
 

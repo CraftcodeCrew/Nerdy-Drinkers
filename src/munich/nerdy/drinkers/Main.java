@@ -20,7 +20,7 @@ public class Main {
             if (!game.isSuperRound) {
                 game.Output.story();
             }
-            else game.Output.superRound();
+            else game.Output.superRound(playerOfTheRound);
 
             if (GameInput.playerWon(playerOfTheRound)) {
                 game.Output.roundWon(playerOfTheRound);
