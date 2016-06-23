@@ -4,6 +4,7 @@ import munich.nerdy.drinkers.io.Blacklist;
 import munich.nerdy.drinkers.io.GameInput;
 import munich.nerdy.drinkers.io.GameLog;
 import munich.nerdy.drinkers.io.GameOutput;
+import munich.nerdy.drinkers.ui.GameGUI;
 
 public class Main {
 

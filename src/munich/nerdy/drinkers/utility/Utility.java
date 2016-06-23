@@ -1,5 +1,7 @@
 package munich.nerdy.drinkers.utility;
 
+import javax.swing.*;
+import java.awt.*;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
@@ -51,6 +53,22 @@ public class Utility {
 
         return builder.toString();
     }
+
+    public static Color hexToRGB(String hexhex) {
+        return new Color(
+                Integer.valueOf(hexhex.substring(1,3),16),
+                Integer.valueOf(hexhex.substring(3,5),16),
+                Integer.valueOf(hexhex.substring(5,7),16)
+        );
+    }
+
+    public static ImageIcon scaleIcon(ImageIcon icon, int NEW_WIDTH, int NEW_HEIGHT) {
+        Image img = icon.getImage();
+        Image newImg = img.getScaledInstance(NEW_WIDTH, NEW_HEIGHT, java.awt.Image.SCALE_SMOOTH);
+        return new ImageIcon(newImg);
+    }
+
+
 
 
 }
