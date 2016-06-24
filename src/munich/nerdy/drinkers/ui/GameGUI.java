@@ -11,6 +11,8 @@ import java.awt.*;
  */
 public class GameGUI {
 
+    private static final String BACKGROUND_HEX = "#512DA8";
+
     private JFrame frame;
     private JPanel top = new JPanel();
     private JPanel mid = new JPanel();
@@ -20,6 +22,7 @@ public class GameGUI {
     private JButton newPlayerButton = new JButton();
     private JButton startButton = new JButton();
     private JLabel playersLabel = new JLabel("Spieler:");
+
 
 
     public GameGUI() {
@@ -36,7 +39,7 @@ public class GameGUI {
         sloganLabel.setFont(new Font("Serif", Font.BOLD, 150));
         sloganLabel.setForeground(Color.WHITE);
         top.add(sloganLabel);
-        top.setBackground(Utility.hexToRGB("#512DA8"));
+        top.setBackground(Utility.hexToRGB(BACKGROUND_HEX));
 
         frame.add(top, BorderLayout.NORTH);
 
@@ -53,7 +56,7 @@ public class GameGUI {
         playersLabel.setFont(new Font("Serif", Font.BOLD, 150));
         playersLabel.setForeground(Color.WHITE);
         bottom.add(playersLabel);
-        bottom.setBackground(Utility.hexToRGB("#512DA8"));
+        bottom.setBackground(Utility.hexToRGB(BACKGROUND_HEX));
         frame.add(bottom, BorderLayout.SOUTH);
 
         buildFrame();
